@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى أميرتي ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            background: #fff0f3 url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* تأثير القلوب المتحركة */
+        .floating-heart {
+            position: absolute;
+            bottom: -100px;
+            color: #ff4b6e;
+            font-size: 20px;
+            opacity: 0.8;
+            z-index: 1;
+            animation: floatUp 6s infinite ease-in;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        #login-screen, #main-content {
+            background: rgba(255, 255, 255, 0.94);
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            z-index: 10;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        #main-content { 
+            display: none; 
+            max-height: 85vh; 
+            overflow-y: auto; 
+            scrollbar-width: none; /* لإخفاء شريط التمرير في فايرفوكس */
+        }
+        #main-content::-webkit-scrollbar { display: none; } /* لإخفاء شريط التمرير في كروم */
+
+        input {
+            width: 80%;
+            padding: 12px;
+            margin: 20px 0;
+            border: 2px solid #ff4b6e;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 18px;
+            outline: none;
+        }
+
+        button {
+            background: #ff4b6e;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin: 10px 0;
+        }
+
+        button:hover { background: #ff758f; transform: scale(1.05); }
+
+        video {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* تنسيق الصور تحت بعضها */
+        .photo-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 10px;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 12px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #ffe5ec;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .photo-card p {
+            font-size: 16px;
+            color: #444;
+            margin-top: 12px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .message-box {
+            display: none;
+            background: #fff;
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px dashed #ff4b6e;
+            line-height: 1.8;
+            font-size: 17px;
+            margin-top: 30px;
+            animation: fadeIn 1s ease-in;
+            text-align: center;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <audio id="music1" src="music1.mp3" loop></audio>
+    <audio id="music2" src="music2.mp3" loop></audio>
+
+    <div id="login-screen">
+        <h2 style="color:#ff4b6e">اكتبي السر يا قلبي ❤️</h2>
+        <input type="password" id="passInput" placeholder="اكتبي الكلمة هنا...">
+        <button onclick="checkPass()">دخول ✨</button>
+    </div>
+
+    <div id="main-content">
+        <h2 style="color:#ff4b6e">كل سنة وأنتي منورة حياتي 🎂🌙</h2>
+
+        <video id="myVideo" controls onplay="pauseMusic()" onpause="resumeMusic()">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+
+        <div class="photo-list">
+            <div class="photo-card">
+                <img src="photo1.jpg" alt="صورة 1">
+                <p>ضحكتك دي هي اللي بتهون عليا أي حاجة صعبة بشوفها في يومي ❤️</p>
+            </div>
+            <div class="photo-card">
+                <img src="photo2.jpg" alt="صورة 2">
+                <p>كل تفصيلة فيكي بحبها، كأنك اتعملتي مخصوص على مقاس قلبي 💍</p>
+            </div>
+            <div class="photo-card">
+                <img src="photo3.jpg" alt="صورة 3">
+                <p>عارفة؟ مفيش حد في الدنيا يقدر يملى مكاني غيرك يا ست البنات 👑</p>
+            </div>
+            <div class="photo-card">
+                <img src="photo4.jpg" alt="صورة 4">
+                <p>وجودك جنبي هو الأمان اللي كنت طول عمري بدور عليه وبتمناه 🥹💗</p>
+            </div>
+        </div>
+
+        <br>
+        <button id="msgBtn" onclick="showFinal()">دوسي هنا يا روحي ❤️</button>
+
+        <div class="message-box" id="letter">
+            بصى بقا انا مش عارف اقولك ايه <br>
+            بس بجد عايز اقولك انك احلى حاجه حصلتلى فى حياتى❤️🫂<br>
+            وعايزك تشيلى من دماغك فكره اننا ممكن نسيب بعض عشان إن شاء الله مش هيحصل🥹<br>
+            عايز اقولك انى بحبك اوييييي يا جيكا❤️💗<br>
+            ومقدرش استغنا عنك وبجد انتى كل حياتي❤️🥹<br>
+            انتى النفس إلى بتنفسه ❤️😉<br>
+            ده اول عيد ميلاد ليكى واحنا مع بعض وإن شاء الله مع بعض لآخر العمر ❤️🥹<br>
+            احنا بس لو نبطل ننام ٢٣ ساعه فى اليوم هتبقى احسن 😂😂😂😂<br>
+            بحبك يا اجمل بنت شافتها عينى❤️💗<br>
+            بحححححححببببك ❤️❤️❤️❤️<br>
+            كل سنه وانتى معايا وجمبى وفى ضهرى فى اى حاجه بعملها 🥹💗<br>
+            كل سنه وانتى طيبه يا حبيبى ❤️❤️❤️❤️<br><br>
+            <button onclick="window.location.href='https://youtu.be/SKfi0V8NRhQ?si=tG8J_1TJuZpy673i'">دوسي هنا للمفاجأة الأخيرة 🎵</button>
+        </div>
+    </div>
+
+    <script>
+        const music1 = document.getElementById("music1");
+        const music2 = document.getElementById("music2");
+        const video = document.getElementById("myVideo");
+
+        function checkPass() {
+            let pass = document.getElementById("passInput").value;
+            if (pass.toLowerCase() === "love") {
+                document.getElementById("login-screen").style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+                music1.play().catch(e => console.log("Audio play deferred"));
+                createFloatingHearts();
+            } else {
+                alert("الباسوورد غلط يا قلبي! ركزي 🙊❤️");
+            }
+        }
+
+        function pauseMusic() { music1.pause(); }
+        function resumeMusic() { 
+            if(document.getElementById("letter").style.display !== "block") {
+                music1.play();
+            }
+        }
+
+        function showFinal() {
+            video.pause();
+            music1.pause();
+            music2.play();
+            document.getElementById("letter").style.display = "block";
+            document.getElementById("msgBtn").style.display = "none";
+            // النزول تلقائياً للرسالة بعد ظهورها
+            setTimeout(() => {
+                document.getElementById("letter").scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        function createFloatingHearts() {
+            setInterval(() => {
+                const heart = document.createElement("div");
+                heart.innerHTML = "❤️";
+                heart.classList.add("floating-heart");
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+                heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 6000);
+            }, 400);
+        }
+    </script>
+</body>
+</html>
